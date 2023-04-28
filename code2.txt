@@ -1,0 +1,14 @@
+  //Преобразовать число в перевернутый массив цифр
+
+  function digitize(n) {
+  n = String(n).split('').reverse().map(Number);
+    return n;
+  }
+
+var arr = digitize(35231);
+console.log(arr);
+
+function digitize(n) {
+  n = String(n).split('').reverse().map(Number);
+  return n;
+}
