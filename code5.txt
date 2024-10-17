@@ -1,0 +1,88 @@
+//Напишите функцию, которая разбивает строку и преобразует ее в массив слов.
+
+function stringToArray(string){
+ return string.trim().split(" ");
+
+}
+
+/
+
+function stringToArray(string){
+    var result = [];
+    var traverse = function foo(string){
+        for(var i=0;i<string.length;i++){
+            var chr = string.charAt(i);
+            if(chr === " "){
+                result.push(string.slice(0,i));
+                foo(string.slice(i+1));
+                return;
+            }
+        }
+        result.push(string);
+    };
+    traverse(string);
+    return result;
+}
+
+/
+
+const stringToArray = ( $ ) => $.split` `;
+
+/
+
+function stringToArray(string){
+
+	 let newStr = "";
+    let result = [];
+    for (let i= 0; i < string.length; i++) {
+       if (string[i]!==" "){
+           newStr = newStr + string[i]
+       }  
+       else{
+           result.push(newStr);
+           newStr = "";
+       }                                                                                                                                                  
+    }
+    result.push(newStr);
+    return result;
+}
+/
+
+
+const stringToArray = (s = '') => s.split(' ');
+/
+
+let stringToArray = string => string.split(' ');
+/
+
+function stringToArray(string){
+  var array = []
+  var temp =''
+  for (let i=0; i<string.length; i++){
+    if (string[i] !== ' '){
+      temp += string[i]
+    } else {
+      array.push(temp)
+      temp = ''
+    }
+  }array.push(temp)
+  return array
+}
+
+/
+
+function stringToArray(string){
+  let buff = '';
+  let res = [];
+  for (let i in string) {
+    if (string[i] != ' ') {
+      buff += string[i];
+    } else {
+      buff = [buff];
+      res.push(buff[0]);
+      buff.pop();
+    }
+  }
+  res.push(buff);
+  return res;
+}
