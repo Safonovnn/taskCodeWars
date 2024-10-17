@@ -1,0 +1,8 @@
+//функция которая удаляет первый и последний символ строки
+
+
+var stroka = "/Mazda%"
+Function removeChar(stroka){
+stroka.replace(/^.|.$/g,"")
+}
+"Mazda"
